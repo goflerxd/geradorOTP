@@ -1,0 +1,24 @@
+package otpGenerator;
+
+/// imports
+import java.util.*;
+
+public class otpGenerator {
+	static char[] OTP(int len) {
+		System.out.println("Gerando senha (OTP) utilizando random(): ");
+		
+		System.out.println("Sua senha temporária (OTP) é : ");
+		String number = "0123456789";
+		/// Geração via Random
+		Random rndm_method = new Random();
+		char[] otp = new char[len];
+		for (int i = 0; i<len; i++) {
+			otp[i] = number.charAt(rndm_method.nextInt(number.length()));
+		}return otp;
+	}
+	public static void main(String[] args) {
+		int length = 4;
+		/// Resultado final
+		System.out.println(OTP(length));
+	}
+}
